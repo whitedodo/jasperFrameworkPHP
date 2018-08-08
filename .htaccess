@@ -1,0 +1,27 @@
+################################################################
+#	2018-08-01
+#	Author: Jasper(rabbit.white@daum.net)
+#	FileName: index.php
+#	Goal: Jasper의 Homepage
+#	Description:	
+#
+################################################################
+
+Options +FollowSymLinks -Indexes -MultiViews  
+<IfModule mod_rewrite.c>
+rewriteEngine On
+</IfModule>
+#  
+# Internally rewrite shortened URL requests to de-shortened URL lookup script filepath plus query string  
+
+# 내 홈페이지
+RewriteRule ^suite/([A-Za-z0-9-\+]+)/([A-Za-z0-9-\+]+)/([A-Za-z0-9-\+]+)/?$ index.php?pageName=$1&subName=$2&id=$3 [L]
+RewriteRule ^suite/([A-Za-z0-9-\+]+)/([A-Za-z0-9-\+]+)/?$ index.php?pageName=$1&subName=$2 [L]
+RewriteRule ^suite/([A-Za-z0-9-\+]+)/?$ index.php?pageName=$1 [L]
+
+# 파일 출력
+RewriteRule ^pub/([A-Za-z0-9-\+]+)/?$ index.php?subName=$1&pageName=file [L]
+
+# 오류 출력
+RewriteRule ^([A-Za-z0-9-\+]+)/?$ index.php?pageName=error&id=error [NC,L,QSA]
+RewriteRule ^([A-Za-z0-9-\+]+)/^([A-Za-z0-9-\+]+)/?$ index.php?pageName=error&id=error [NC,L,QSA]

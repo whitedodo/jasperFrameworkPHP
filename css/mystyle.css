@@ -1,0 +1,179 @@
+/*
+  <JasperCSS>  Copyright (C) 2018  Jaspers
+	File: mystyle.css
+	Author: Jasper
+	Created by 2018-06-27
+	Goal: myStyle
+	Description:
+*/
+
+  a:link { color: #000; text-decoration: none;}
+  a:visited { color: #000; text-decoration: none;}
+  a:hover { color: #000; text-decoration: underline;}
+
+  body {
+    background-color:#FFF;
+  }
+  h1   {
+    color: blue;
+  }
+  h2 {
+    font-family: "Nanum Gothic", sans-serif;
+  }
+  
+  h3 {
+    font-family: "Nanum Gothic", sans-serif;
+  }
+  
+  h4 {
+    font-family: "Nanum Gothic", sans-serif;
+  }
+  
+  h5 {
+    font-family: "Nanum Gothic", sans-serif;
+  }
+  
+  h6 {
+    font-family: "Nanum Gothic", sans-serif;
+  }
+  
+  p{
+    font-family: "Nanum Gothic", sans-serif;
+  }
+  
+  ul.mylist li, ol.mylist li {
+    text-align: left;
+    list-style: none;
+    padding: 5px 5px 5px 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #efefef;
+    font-size: 12px;
+  }
+
+  
+  .tg  {
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+    border-color:#aaa;
+  }
+  .tg td{
+    width:20%;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size:12px;
+    padding:5px 5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-color:#aaa;
+    color:#333;
+    background-color:#fff;
+    text-align:center;
+  }
+  .tg th{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    padding:5px 5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-color:#aaa;
+    color:#fff;
+    background-color:#f38630;
+  }
+  
+  .tg_general  {
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+    border-color:#aaa;
+  }
+  .tg_general td{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size:12px;
+    padding:5px 5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-color:#aaa;
+    color:#333;
+    background-color:#fff;
+    text-align:center;
+  }
+  .tg_general th{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    padding:5px 5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-color:#aaa;
+    color:#fff;
+    background-color:#f38630;
+  }
+  
+  .tg_introduce  {
+    width:100%;
+    border-collapse:collapse;
+    border-spacing:0;
+    border-color:#aaa;
+    text-align:center;
+  }
+  .tg_introduce td{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size:14px;
+    padding:5px 5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-color:#aaa;
+    color:#333;
+    background-color:#fff;
+  }
+  .tg_introduce th{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size:14px;
+    font-weight:normal;padding:5px 5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-color:#aaa;
+    color:#fff;
+    background-color:#f38630;
+  }
+  .tg_introduce .tg-nknw{
+    background-color:#68cbd0;
+    color:#000000;
+    border-color:#343434
+  }
+  
+  #ft_information{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size:12px;
+    color:#000000;
+  }
+  .time_font{
+    font-family: "Nanum Gothic", sans-serif;
+    font-size:12px;
+    margin-right:10px;
+  }
