@@ -14,6 +14,9 @@
 > ##### 1. Apache 2, PHP 5.2 환경에 넣어서 사용하면 된다.(Can be used in Apache 2, PHP 5.2 environment.)
 
 #### Quick Start(쉬운 시작)
-> ##### 1. controller의 homepage 클래스에서 카테고리 등만 조작하면 된다.(You only need to operate categories in the controller's homepage class.)
+> ##### 1. index.php 파일에서 환경설정을 하면 된다.
+        (You can configure the index.php file.)
+> ##### 2. controller의 homepage 클래스에서 카테고리 등만 조작하면 된다.
+        (You only need to operate categories in the controller's homepage class.)
 
 
