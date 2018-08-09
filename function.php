@@ -205,9 +205,61 @@ class JasperFunction{
                             echo "</a>";
                         }
                         else if (strpos( $col_data[$col], "pub/" ) != false){
-                            echo "<a href=\"$strValue\" target=\"_blank\">";
-                            echo $strValue;
-                            echo "</a>";
+                            
+                            $targetURL = $_SERVER["PHP_SELF"];
+                            
+                            // 사용자 디렉토리 호스트 사용자
+                            if ( strpos ( $targetURL, "~") != false &&
+                                $col_data[$col] != ''){
+                                
+                                $targetURL = explode("/", $targetURL);
+                                $targetVal = explode("/", $strValue);
+                                
+                                $strLink = ''; // 초기화
+                                
+                                $tId = 0;
+                                foreach ( $targetURL as $tarURL ){
+                                    if ($tId == 0){}else{
+                                        $strLink = $$strLink . $tarURL . "/";
+                                    }
+                                    $tId++;
+                                }
+                                
+                                $strLink = $strLink . "?pageName=file&subName=" . $targetVal[2];
+                                
+                                echo "<a href=\"$strLink\" target=\"_blank\">";
+                                echo $strValue;
+                                echo "</a>";
+                                
+                            }
+                            // 일반 사용자
+                            else{
+                                
+                                $targetURL = $_SERVER["PHP_SELF"];
+                                $targetURL = explode("/", $targetURL);
+                                $strLink = ''; 
+                                
+                                $tId = 0;
+                                foreach ( $targetURL as $tarURL ){
+                                    
+                                    if ( ($tId + 1) != count($targetURL) ){
+                                        $strLink = $strLink . $tarURL;
+                                    }
+                                        
+                                    $tId++;
+                                }
+                                
+                                if ( count($targetURL) > 2 ){
+                                    $strLink = "/". $strLink . $strValue;
+                                }else{
+                                    $strLink = $strLink . $strValue;
+                                }
+                                
+                                
+                                echo "<a href=\"$strLink\" target=\"_blank\">";
+                                echo $strValue;
+                                echo "</a>";
+                            }
                         }
                         else{
                             if ($index == 0)
