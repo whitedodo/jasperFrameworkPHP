@@ -24,5 +24,5 @@
         전체 출력(Full Print) -> $this->getTreeCategories( NULL, 'wide' );
         깊이별 출력(Depth Print) -> $this->getTreeCategories( DepthID(깊이), 2 );
 > ##### 4. CSV 기능 사용방법(How to Use the CSV Function) / Jasper / 2018-08-09
-        일반 CSV 출력(General CSV Print) -> $jFunction->csvToViewer("./경로/파일명.csv");
-        학교 페이 출력(Specific to School Pay Print) -> $jFunction->csvToSchoolPay("./경로/파일명.csv");
+        일반 / CSV 출력(General CSV Print) -> $jFunction->csvToViewer("./경로/파일명.csv");
+         / 학교 수업료 등 출력(Specific to School Pay Print) -> $jFunction->csvToSchoolPay("./경로/파일명.csv");
