@@ -46,16 +46,17 @@ class Homepage{
         $this->footer = new Footer();
         
         $this->footer->setCopyright("Jasper");
-        $this->footer->setPriEmail("rabbit.white@daum.net");
-        $this->footer->setSubEmail("rabbit.white@daum.net");
-        $this->footer->setPowered("copyright @ Dodo(Jasper)");
+        $this->footer->setPriEmail("white@localhost");
+        $this->footer->setSubEmail("rabbit@localhost");
+        $this->footer->setPowered("localhost");
+        $this->footer->setOpeningDate("2018-07-08");
         
         $this->pageTitleList = array(
             'index' => '홈페이지(Homepage)',
             'file' => 'Pub(Small File)',
             'error' => '오류(Error)',
             'ready' => '준비(Ready)',
-            'profile' => '나(Me)'
+            'house' => '주거(House)'
         );
         
         $this->pageUrlList = array(
@@ -63,24 +64,35 @@ class Homepage{
             'file' => 'file',
             'error' => 'error',
             'ready' => 'ready',
-            'profile' => 'profile'
+            'house' => 'house'
         );
         
         $this->subTitleList['file'] = array(
-            'resumecvcl' => 'resumecvcl'
+            'creative' => 'creative'
         );
         
         $this->subUrlList['file'] = array(
-            'resumecvcl' => 'resumecvcl'
+            'creative' => 'creative'
         );
         
         $this->subTitleList['profile'] = array(
-            'hobbies' => '취미(Hobbies)'
+            'hobbies' => '취미(Hobbies)',
+            'favorite' => '즐겨찾기(favorite)'
         );
         
         $this->subUrlList['profile'] = array(
-            'hobbies' => 'hobbies'
+            'hobbies' => 'hobbies',
+            'favorite' => 'favorite'
         );
+        
+        $this->subTitleList['house'] = array(
+            'housePay' => '집계산(House Calculator)'
+        );
+        
+        $this->subUrlList['house'] = array(
+            'housePay' => 'housePay'
+        );
+        
         
         $this->idTitleList['profile'] = array();
         $this->idUrlList['profile'] = array();
