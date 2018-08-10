@@ -10,8 +10,8 @@
 
 class JasperFunction{
     
-    private $bookMin = 17;
-    private $bookMax = 20;
+    private $bookMin = 18;
+    private $bookMax = 21;
     
     // CSV To Viewer(School)
     function csvToSchoolPay($file){
