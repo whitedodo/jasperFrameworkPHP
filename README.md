@@ -8,7 +8,10 @@
 > ###### 3-2. 2018-08-07 ~ 2018-08-08 / Jasper / 카테고리 항목 - 3단계 구성.(재귀 구조로 구현) / Category items - 3-step configuration (implemented as recursive structure)
 > ###### 3-3. 2018-08-07 ~ 2018-08-08 / Jasper / URL 짧은 주소 추가(.htaccess) / Add URL Short Address (.htaccess)
 > ###### 3-4. 2018-08-07 ~ 2018-08-08 / Jasper / Apache 2.2, PHP 5.2~5.6를 지원함. / Supports Apache 2.2, PHP 5.2 to 5.6.
-> ###### 3-5. 2018-08-09 / Jasper / CSV - 뷰어 기능 추가
+> ###### 3-5. 2018-08-09 / Jasper / CSV - 뷰어 기능 추가(CSV - Add Viewer Function)
+> ###### 3-6. 2018-08-09 / Jasper / 학비 CSV - 뷰어 기능 추가(School Pay CSV - Add Viewer Function)
+> ###### 3-7. 2018-08-11 / Jasper / 주거 CSV - 뷰어 기능 추가(House Pay CSV - Add Viewer Function)
+> ###### 3-8. 2018-08-11 / Jasper / W3C Validator 검사 완료(W3C Validator Check Completed) / https://validator.w3.org/
 > ##### 4. License: MIT License.
 
 #### 빌드(Build)
@@ -33,6 +36,7 @@
         (The method of using categories in a tree structure can be used as follows)
         전체 출력(Full Print) -> $this->getTreeCategories( NULL, 'wide' );
         깊이별 출력(Depth Print) -> $this->getTreeCategories( DepthID(깊이), 2 );
-> ##### 4. CSV 기능 사용방법(How to Use the CSV Function) / Jasper / 2018-08-09
+> ##### 4. CSV 기능 사용방법(How to Use the CSV Function) / Jasper / 2018-08-09, 2018-08-11
         일반 / CSV 출력(General CSV Print) -> $jFunction->csvToViewer("./경로/파일명.csv");
-        * (예 - ) 학교 수업료 등 출력(Specific to School Pay Print) -> $jFunction->csvToSchoolPay("./경로/파일명.csv");
+        * (예1) 학비 모델 출력(Specific to School Pay Print) -> $jFunction->csvToSchoolPay("./경로/파일명.csv");
+        * (예2) 주거 모델 출력(Specific to House Pay Print) -> $jFunction->csvToHousePay("./경로/파일명.csv"); / Jasper / 2018-08-11
