@@ -103,7 +103,7 @@ class JasperFunction{
                             }
                             else{
                                 
-                                echo $strValue . "&nbsp";
+                                echo $strValue . "&nbsp;";
                             }
                         }
                         
@@ -136,7 +136,7 @@ class JasperFunction{
                     foreach ( $arrTitle as $arrVal ){
                         
                         echo "<th colspan=\"7\">";
-                        echo "<b>$arrVal</b";
+                        echo "<b>$arrVal</b>";
                         echo "</th>";
                     }
                     echo "\t</tr>\n";
@@ -250,7 +250,7 @@ class JasperFunction{
                             }
                             else{
                                 
-                                    echo $strValue . "&nbsp";
+                                    echo $strValue . "&nbsp;";
                             }
                         }
                         
@@ -419,7 +419,7 @@ class JasperFunction{
                                 echo "</b>";
                             }
                             else{
-                                echo $strValue . "&nbsp";
+                                echo $strValue . "&nbsp;";
                             }
                             
                         }
