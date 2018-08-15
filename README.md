@@ -12,6 +12,11 @@
 > ###### 3-6. 2018-08-09 / Jasper / 학비 CSV - 뷰어 기능 추가(School Pay CSV - Add Viewer Function)
 > ###### 3-7. 2018-08-11 / Jasper / 주거 CSV - 뷰어 기능 추가(House Pay CSV - Add Viewer Function)
 > ###### 3-8. 2018-08-11 / Jasper / W3C Validator 검사 완료(W3C Validator Check Completed) / https://validator.w3.org/
+> ###### 3-9. 2018-08-15 / Jasper / Fonts 시스템 구축 (controller/fonts 추가)
+> ###### 3-10. 2018-08-15 / Jasper / function.php / 기능개선 (변수명 변경 bookMin-> univMin, bookMax-> univMax)
+> ###### 3-11. 2018-08-15 / Jasper / function.php / 기능개선 (변수명 추가 fontMin, fontMax)
+> ###### 3-12. 2018-08-15 / Jasper / function.php / 기능추가 getSkinDir($userDir, $port)
+> ###### 3-13. 2018-08-15 / Jasper / function.php / 기능추가 getURLDir($skin_dir, $user_dir)
 > ##### 4. License: MIT License.
 
 #### 빌드(Build)
@@ -40,3 +45,6 @@
         일반 / CSV 출력(General CSV Print) -> $jFunction->csvToViewer("./경로/파일명.csv");
         * (예1) 학비 모델 출력(Specific to School Pay Print) -> $jFunction->csvToSchoolPay("./경로/파일명.csv");
         * (예2) 주거 모델 출력(Specific to House Pay Print) -> $jFunction->csvToHousePay("./경로/파일명.csv"); / Jasper / 2018-08-11
+> ##### 5. 폰트 기능 ( $font->createFont($root); )
+        Font function ($font->createFont($root); )
+
