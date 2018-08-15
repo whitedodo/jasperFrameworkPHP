@@ -10,8 +10,11 @@
 
 class JasperFunction{
     
-    private $bookMin = 18;
-    private $bookMax = 21;
+    private $fontMin = 1;
+    private $fontMax = 1;
+    
+    private $univMin = 18;
+    private $univMax = 21;
     
     private $houseMin = 14;
     private $houseMax = 16;
@@ -209,8 +212,8 @@ class JasperFunction{
                     
                     $col_count = count($col_data);
                     
-                    if ( $row >= $this->bookMin && 
-                         $row <= $this->bookMax
+                    if ( $row >= $this->univMin && 
+                         $row <= $this->univMax
                         ){
                         
                     }else{
@@ -227,8 +230,8 @@ class JasperFunction{
                         
                         $strValue = $this->convertToUTF8( $col_data[$col] );
                         
-                        if ( $row >= $this->bookMin &&
-                            $row <= $this->bookMax
+                        if ( $row >= $this->univMin &&
+                            $row <= $this->univMax
                             ){
                                 if ( $index != 0 && $strValue != ''){
                                     array_push($arrData, $strValue);
@@ -257,8 +260,8 @@ class JasperFunction{
                     }
                     
                     
-                    if ( $row >= $this->bookMin &&
-                        $row <= $this->bookMax
+                    if ( $row >= $this->univMin &&
+                        $row <= $this->univMax
                         )
                     {}
                         else{
@@ -277,7 +280,7 @@ class JasperFunction{
                 $arrCount = sizeof($arrData);
                 
                 // 예상 시뮬레이션 출력
-                if ( $arrCount == ( $this->bookMax - $this->bookMin ) ){
+                if ( $arrCount == ( $this->univMax - $this->univMin ) ){
                     
                     echo "\t<tr>\n";
                     foreach ( $arrTitle as $arrVal ){
@@ -468,7 +471,8 @@ class JasperFunction{
         }
     }
     
-    public function getSkinDir($userDir){
+    // 스킨 경로 가져오기
+    public function getSkinDir($userDir, $port){
         
         // 버그 개선
         //echo $userDir;
@@ -476,21 +480,47 @@ class JasperFunction{
         if ($userDir == ''){
             //echo "참1";
             return $userDir;
+            
         }else if( $userDir == '.'){
             //echo "참2";
             return $userDir;
+            
         }else if ( strpos ($userDir, "~") == 0){
-            //echo "참3";
+            
             $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') ||
             $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
             
-            return $protocol . $_SERVER["SERVER_NAME"] . "/" . $userDir;
+            if ( $port == 80 || $port == 443 ){
+                return $protocol . $_SERVER["SERVER_NAME"] . "/" . $userDir;
+            }else{
+                return $protocol . $_SERVER["SERVER_NAME"] . $port . "/" . $userDir;
+            }
         }
         else{
-            //echo "참4";
+            
             return "/" . $userDir;
         }
         
+    }
+    
+    // URL 루트경로 가져오기
+    public function getURLDir($skin_dir, $user_dir){
+        
+        $strDir = $_SERVER["SCRIPT_FILENAME"];
+        
+        $root_dir = str_replace($user_dir, "", $skin_dir);
+        
+        if ( strpos( $root_dir, '/') == true ){            
+            $root_dir = str_replace("://", ":**", $root_dir);
+            $root_dir = str_replace("/", "", $root_dir);
+            $root_dir = str_replace(":**", "://", $root_dir);
+        }
+        
+        if ( strpos( $user_dir, '~') !== false ){
+            $root_dir = $root_dir . "/" . $user_dir;
+        }
+        
+        return $root_dir;
     }
     
     // 실제 경로 가져오기
