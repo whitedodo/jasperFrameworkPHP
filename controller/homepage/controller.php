@@ -6,7 +6,7 @@
  * Author: Dodo (rabbit.white at daum dot net)
  * Description:
  * 2018-08-08 / Jasper / Tree형 카테고리 구현
- * 
+ * 2018-08-16 / Jasper / 기능개선
  */
 
 class Homepage{
@@ -20,6 +20,7 @@ class Homepage{
     // Directories
     private $rootDir;
     private $userDir;
+    private $port;
     private $coreName;
     
     // Array
@@ -36,7 +37,7 @@ class Homepage{
     // Footer
     private $footer;
     
-    public function __construct( $rootDir, $userDir ){
+    public function __construct( $rootDir, $userDir, $port ){
         
         $this->jFunction = new JasperFunction();
         $this->pageInfo = new PageInfo(-1, -1, -1);
@@ -45,18 +46,18 @@ class Homepage{
         $this->coreName = 'suite';
         $this->footer = new Footer();
         
-        $this->footer->setCopyright("Jasper");
-        $this->footer->setPriEmail("white@localhost");
-        $this->footer->setSubEmail("rabbit@localhost");
+        $this->footer->setCopyright("root");
+        $this->footer->setPriEmail("root@localhost");
+        $this->footer->setSubEmail("root@localhost");
         $this->footer->setPowered("localhost");
-        $this->footer->setOpeningDate("2018-07-08");
+        $this->footer->setOpeningDate("2018-08-16");
         
         $this->pageTitleList = array(
             'index' => '홈페이지(Homepage)',
             'file' => 'Pub(Small File)',
             'error' => '오류(Error)',
             'ready' => '준비(Ready)',
-            'house' => '주거(House)'
+            'profile' => '나(Me)'
         );
         
         $this->pageUrlList = array(
@@ -64,35 +65,16 @@ class Homepage{
             'file' => 'file',
             'error' => 'error',
             'ready' => 'ready',
-            'house' => 'house'
+            'profile' => 'profile'
         );
         
         $this->subTitleList['file'] = array(
-            'creative' => 'creative'
+            'study' => 'study(공부)'
         );
         
         $this->subUrlList['file'] = array(
-            'creative' => 'creative'
+            'study' => 'study'
         );
-        
-        $this->subTitleList['profile'] = array(
-            'hobbies' => '취미(Hobbies)',
-            'favorite' => '즐겨찾기(favorite)'
-        );
-        
-        $this->subUrlList['profile'] = array(
-            'hobbies' => 'hobbies',
-            'favorite' => 'favorite'
-        );
-        
-        $this->subTitleList['house'] = array(
-            'housePay' => '집계산(House Calculator)'
-        );
-        
-        $this->subUrlList['house'] = array(
-            'housePay' => 'housePay'
-        );
-        
         
         $this->idTitleList['profile'] = array();
         $this->idUrlList['profile'] = array();
@@ -125,6 +107,11 @@ class Homepage{
     // 프로그램 이름(코어명)
     public function getCoreName(){
         return $this->coreName;
+    }
+    
+    // 포트번호
+    public function getPort(){
+        return $this->port;
     }
     
     // Title List 가져오기
@@ -189,12 +176,14 @@ class Homepage{
         $jFunction = $this->jFunction;
         
         // 홈 경로 불러오기
+        $root_dir = $this->getRootDir();
         $coreName = $this->getCoreName();
         $home_dir = $this->getUserDir();
         
         $usr_directories = $jFunction->getDirectories( $this->getRootDir(), $this->getUserDir() );
         
-        $skin_dir = $jFunction->getSkinDir( $this->getUserDir() );
+        $skin_dir = $jFunction->getSkinDir( $this->getUserDir() , $this->getPort() );
+        $root_url = $jFunction->getURLDir( $skin_dir, $this->getUserDir() );
         
         //echo $skin_dir . "*";
         $footer = $this->footer;
