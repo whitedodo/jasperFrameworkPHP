@@ -6,13 +6,14 @@
  * Created by 2018-08-07
  * Author: Dodo (rabbit.white at daum dot net)
  * Description:
+ * 2018-08-16 / Jasper / 기능개선 $DIR_PATH 보완
  *
  */
 
 ?>
 <?php
   $index = 1;
-  $DIR_PATH = $_SERVER["DOCUMENT_ROOT"] . "/$home_dir/pub/$subName";
+  $DIR_PATH =  "$root_dir/pub/$subName";
 ?>
 <?php
   function formatSize($bytes, $decimals = 2) {
@@ -21,7 +22,8 @@
     return sprintf("%.{$decimals}f", $bytes / pow(1024, $factor)) . @$size[$factor];
   }
 ?>
-<h2>Study/Creative - Filelist</h2>
+
+<h2><?php echo $title;?> - Filelist</h2>
 <hr>
 <table class="tg_general">
   <tr>
