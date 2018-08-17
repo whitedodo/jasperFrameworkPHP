@@ -21,20 +21,21 @@
 
 #### 빌드(Build)
 > ##### 1. Apache 2, PHP 5.2 환경에 넣어서 사용하면 된다.(Can be used in Apache 2, PHP 5.2 environment.)
-> ##### 2. index.php 파일을 열어서 환경 설정을 한다.(Open the index.php file to configure the environment.)
-       - 윈도우(Windows)
-       $root = "C:/{webRootDir}/htdocs";
-       $directories = '{폴더명 / 없으면 생략}';
-       - 리눅스(Linux)
-       $root = '/usr/{경로명}/{계정명}';
-       $directories = '{폴더명 / 없으면 생략}';
-       - 사용자 디렉토리( http:// {주소} /~{계정명} )
-       $directories = '{폴더명 / 없으면 생략}';
-       $directories = '{~계정명}';
 
 #### Quick Start(쉬운 시작)
-> ##### 1. index.php 파일에서 환경설정을 하면 된다. / Jasper / 2018-08-08
+> ##### 1. index.php 파일에서 환경설정을 하면 된다. / Jasper / 2018-08-08(Updated 2018-08-18)
         (You can configure the index.php file.)
+        
+        - 윈도우(Windows)
+        $root = "C:/{webRootDir}/htdocs";
+        $directories = '{폴더명 / 없으면 생략}';
+        - 리눅스(Linux)
+        $root = '/usr/{경로명}/{계정명}';
+        $directories = '{폴더명 / 없으면 생략}';
+        - 사용자 디렉토리( http:// {주소} /~{계정명} )
+        $directories = '{폴더명 / 없으면 생략}';
+        $directories = '{~계정명}';
+        
 > ##### 2. controller의 homepage 클래스에서 카테고리 등만 조작하면 된다. / Jasper / 2018-08-08
         (You only need to operate categories in the controller's homepage class.)
 > ##### 3. Tree 구조의 카테고리 사용방법은 다음과 같이 사용할 수 있다. / Jasper / 2018-08-08
