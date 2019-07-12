@@ -1,7 +1,7 @@
 ## [JasperFramework with PHP - Project]
 
 #### 작성자 소개(About the author)
-> ##### 1. Dodo (rabbit.white@daum.net)
+> ##### 1. Dodo (rabbit.white@daum.net / jungwy@kumoh.ac.kr)
 > ##### 2. Created by: 2018-06-29
 > ##### 3. Description: 
 > ###### 3-1. 2018-08-07 ~ 2018-08-08 / Jasper / Database is configured with pure PHP removed.(데이터베이스를 제거한 순수한 PHP로 구성함.)
